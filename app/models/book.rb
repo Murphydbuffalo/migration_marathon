@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
   has_many :categorizations
-  has_many :checkouts, through: :categorizations
+  has_many :checkouts
+  has_many :categories, through: :categorizations
 
   # Validations will check your Model objects BEFORE they are sent to the db
   # Otherwise your null: false contraint will not throw an error until it is
